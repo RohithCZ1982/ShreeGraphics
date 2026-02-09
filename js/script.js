@@ -164,16 +164,16 @@ window.addEventListener('load', () => {
     generatePlaceholderImage('portfolioImage5', 'Books & Magazines', '#FF8C42', '#FF6B35');
     generatePlaceholderImage('portfolioImage6', 'Custom Projects', '#0A2540', '#1A3A5C');
 
-    // Generate client logos
-    generateClientLogo('clientLogo1', 'Government of India');
-    generateClientLogo('clientLogo2', 'Karnataka Government');
-    generateClientLogo('clientLogo3', 'SKANRAY');
-    generateClientLogo('clientLogo4', 'L&T');
-    generateClientLogo('clientLogo5', 'TATA Communications');
-    generateClientLogo('clientLogo6', 'Kaluders');
-    generateClientLogo('clientLogo7', 'KAYNES Technology');
-    generateClientLogo('clientLogo8', 'B.V. PUNDIT\'S');
-    generateClientLogo('clientLogo9', 'HEXMOTO');
+    // Generate client logos - DISABLED: Using actual logo files now
+    // generateClientLogo('clientLogo1', 'Government of India');
+    // generateClientLogo('clientLogo2', 'Karnataka Government');
+    // generateClientLogo('clientLogo3', 'SKANRAY');
+    // generateClientLogo('clientLogo4', 'L&T');
+    // generateClientLogo('clientLogo5', 'TATA Communications');
+    // generateClientLogo('clientLogo6', 'SVL');
+    // generateClientLogo('clientLogo7', 'KAYNES Technology');
+    // generateClientLogo('clientLogo8', 'B.V. PUNDIT\'S');
+    // generateClientLogo('clientLogo9', 'HEXMOTO');
 });
 
 // Add scroll reveal animation
