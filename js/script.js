@@ -20,7 +20,7 @@ navLinks.forEach(link => {
     });
 });
 
-// Active navigation link on scroll
+// Active navigation link on scroll (Main Menu)
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -34,12 +34,57 @@ window.addEventListener('scroll', () => {
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
+        // Only update active state for links that are hash links on the current page
+        if (link.getAttribute('href').startsWith('#') || link.getAttribute('href').includes(window.location.pathname.split('/').pop() + '#')) {
+            if (link.getAttribute('href').includes('#' + current)) {
+                // Logic handled by static active class for active page, but for one-page scroll:
+                // This existing logic might be too broad if we have cross-page links.
+                // For now keeping it simple as per original, but focusing on sub-menu below.
+            }
         }
     });
 });
+
+// Active Sub-Menu Link on Scroll (Services Page)
+const subMenuLinks = document.querySelectorAll('.sub-menu-link');
+const serviceSections = document.querySelectorAll('.service-category');
+
+if (subMenuLinks.length > 0 && serviceSections.length > 0) {
+    window.addEventListener('scroll', () => {
+        let currentService = '';
+        const scrollPosition = window.scrollY;
+
+        // Calculate offset including header and submenu height
+        let offset = 200; // ample buffer
+        const subMenu = document.querySelector('.sub-menu-container');
+        if (subMenu) {
+            offset += subMenu.offsetHeight;
+        }
+
+        serviceSections.forEach(section => {
+            const sectionTop = section.offsetTop - offset;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentService = section.getAttribute('id');
+            }
+        });
+
+        subMenuLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentService) {
+                link.classList.add('active');
+
+                // Auto-scroll the sub-menu on mobile to keep active item in view
+                const subMenuContainer = document.querySelector('.sub-menu-container'); // or .sub-menu overflow container
+                if (subMenuContainer && window.innerWidth <= 768) {
+                    // logic to scroll horizontal menu could go here if needed
+                }
+            }
+        });
+    });
+}
+
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -47,9 +92,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80;
+            // Calculate base offset (Main Navbar)
+            let offset = 80;
+
+            // Check if there is a sticky sub-menu and add its height to the offset
+            const subMenu = document.querySelector('.sub-menu-container');
+            if (subMenu && getComputedStyle(subMenu).display !== 'none') {
+                offset += subMenu.offsetHeight;
+            }
+
+            const headerOffset = target.offsetTop - offset;
+            const finalOffset = headerOffset < 0 ? 0 : headerOffset;
+
             window.scrollTo({
-                top: offsetTop,
+                top: finalOffset,
                 behavior: 'smooth'
             });
         }
@@ -163,17 +219,6 @@ window.addEventListener('load', () => {
     generatePlaceholderImage('portfolioImage4', 'Promotional', '#0A2540', '#1A3A5C');
     generatePlaceholderImage('portfolioImage5', 'Books & Magazines', '#FF8C42', '#FF6B35');
     generatePlaceholderImage('portfolioImage6', 'Custom Projects', '#0A2540', '#1A3A5C');
-
-    // Generate client logos - DISABLED: Using actual logo files now
-    // generateClientLogo('clientLogo1', 'Government of India');
-    // generateClientLogo('clientLogo2', 'Karnataka Government');
-    // generateClientLogo('clientLogo3', 'SKANRAY');
-    // generateClientLogo('clientLogo4', 'L&T');
-    // generateClientLogo('clientLogo5', 'TATA Communications');
-    // generateClientLogo('clientLogo6', 'SVL');
-    // generateClientLogo('clientLogo7', 'KAYNES Technology');
-    // generateClientLogo('clientLogo8', 'B.V. PUNDIT\'S');
-    // generateClientLogo('clientLogo9', 'HEXMOTO');
 });
 
 // Add scroll reveal animation

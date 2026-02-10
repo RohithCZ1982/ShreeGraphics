@@ -27,7 +27,7 @@ Save your logo files with these exact names:
 - `skanray.png`
 - `lt.png`
 - `tata.png`
-- `kaluders.png`
+- `SVL.png`
 - `kaynes.png`
 - `bvpundits.png`
 - `hexmoto.png`
@@ -66,7 +66,7 @@ Current clients displayed:
 3. SKANRAY
 4. L&T
 5. TATA Communications
-6. Kaluders
+6. SLV
 7. KAYNES Technology
 8. B.V. PUNDIT'S
 9. HEXMOTO

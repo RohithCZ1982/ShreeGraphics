@@ -113,30 +113,94 @@ body {
 /* Hero Section */
 .hero-section {
     margin-top: 80px;
-    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-    padding: 100px 0 150px 0;
+    /* Use relative positioning for the video container */
     position: relative;
+    /* Ensure section takes full viewport height minus navbar if desired, or min-height */
+    height: calc(100vh - 80px);
+    /* 100vh minus navbar height */
+    min-height: 600px;
+    padding: 0 0 120px 0;
+    /* Padding bottom for wave divider space, top 0 */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    /* Push content to bottom */
+    background-color: var(--dark-navy);
+    /* Fallback bg */
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
     overflow: hidden;
 }
 
+.hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 37, 64, 0.3) 0%, rgba(10, 37, 64, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    min-height: 600px;
+    /* Center horizontally */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    /* Removed grid layout */
 }
 
 .hero-text {
-    animation: fadeInLeft 1s ease;
+    animation: fadeInUp 1s ease;
+    color: var(--white);
+    margin-bottom: 40px;
+    /* Space from bottom */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
     font-size: 56px;
     font-weight: 800;
     line-height: 1.2;
-    color: var(--dark-navy);
+    color: var(--white);
     margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .highlight {
@@ -146,22 +210,28 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 20px;
-    color: var(--text-light);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 20px;
     font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
     font-size: 18px;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 40px;
     line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .btn {
@@ -199,25 +269,7 @@ body {
     transform: translateY(-2px);
 }
 
-.hero-image {
-    animation: fadeInRight 1s ease;
-}
-
-.image-placeholder {
-    width: 100%;
-    height: 500px;
-    background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(10, 37, 64, 0.3);
-    position: relative;
-}
-
-.image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* Removed .hero-image and .image-placeholder styles */
 
 .wave-divider {
     position: absolute;
@@ -226,6 +278,8 @@ body {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 3;
+    /* Ensure wave is on top of video */
 }
 
 .wave-divider svg {
@@ -647,4 +701,211 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* Image Labels (similar to code.html) */
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Services Page Styles */
+.sub-menu-container {
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 80px;
+    /* Height of main navbar */
+    z-index: 900;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.sub-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    overflow-x: auto;
+}
+
+.sub-menu-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.sub-menu-link:hover,
+.sub-menu-link.active {
+    color: var(--white);
+    background-color: var(--primary-orange);
+    box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+}
+
+.services-main {
+    padding-top: 0;
+    padding-bottom: 60px;
+    background-color: var(--light-gray);
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 80px 0;
+    background-color: var(--dark-navy);
+}
+
+.services-header .section-title {
+    color: var(--white);
+}
+
+.services-header .section-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.services-header .title-underline {
+    background: linear-gradient(90deg, var(--primary-orange), transparent);
+}
+
+/* Hide Portfolio Section */
+#portfolio {
+    display: none !important;
+}
+
+/* Services Page Styles */
+.service-category {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    scroll-margin-top: 160px;
+    /* Offset for sticky header + sub-menu */
+}
+
+.service-category:last-child {
+    border-bottom: none;
+}
+
+.category-header {
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary-orange);
+    padding-left: 20px;
+}
+
+.category-header h3 {
+    font-size: 28px;
+    color: var(--dark-navy);
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: var(--primary-orange);
+    padding: 80px 0;
+    color: var(--white);
+    margin-top: 60px;
+    border-radius: 20px;
+    margin-bottom: -40px;
+    /* Slight overlap with footer visually if desired, or just spacing */
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(255, 140, 66, 0.2);
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.cta-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.cta-text h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.cta-text p {
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-cta-primary {
+    background-color: var(--white);
+    color: var(--primary-orange);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--white);
+}
+
+.btn-cta-primary:hover {
+    background-color: var(--light-gray);
+    border-color: var(--light-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cta-secondary {
+    background-color: transparent;
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--white);
+}
+
+.btn-cta-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

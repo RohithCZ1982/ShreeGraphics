@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Categories | Shree Graphics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF7E20", // Custom Orange for this page
+                        "brand-blue": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        .stagger-7 { animation-delay: 0.7s; }
+
+        .service-card:hover .service-overlay {
+            opacity: 0.9;
+        }
+        
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318]">
+<!-- Navigation (Identical to Home Page Style) -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#f0f2f4] px-6 md:px-20 lg:px-40 py-4">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black tracking-tight">SHREE GRAPHICS</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary" href="#">Services</a>
+<a class="hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="hover:text-primary transition-colors" href="#">About</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden lg:flex items-center gap-2 bg-[#f0f2f4] px-4 py-2 rounded-lg text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">search</span>
+                    Search
+                </button>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                    Get Quote
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-6 md:px-20 lg:px-40 py-12">
+<!-- Hero Section -->
+<div class="fade-in-up mb-12">
+<nav class="flex items-center gap-2 text-sm font-medium text-[#616f89] mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-[#111318]">Service Categories</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-black tracking-tighter mb-4 text-[#111318]">
+                        Precision Printing <span class="text-primary">&amp;</span> Industrial Design
+                    </h1>
+<p class="text-lg text-[#616f89] leading-relaxed">
+                        Explore our comprehensive range of high-performance printing solutions and industrial manufacturing services tailored for modern brands.
+                    </p>
+</div>
+<button class="flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">download</span>
+                    Download Catalog
+                </button>
+</div>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Category 1: Digital & UV Printing -->
+<div class="service-card group fade-in-up stagger-1 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="High resolution UV printer in action" class="w-full h-full object-cover transition-transform duration-500" data-alt="Modern UV printing machine in operation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtAPB_r5Gf2ex3QRj_Gpj-v5sCK-Q-j-vvXdlkpw3qDWkpm7P-1H8HRw8GAM5os7sLmEfFBNGSi_PCaMg-GSuZ5zGhhYdCdwk33p68jngsGCqyqaPLDiiADZB-LkudpNEJu1tX_yfuRN_4meprt9i3TK7_rql0b9ZwfrevwG1fz0Rp2dkuICpateN1jVRB1DSFn_wDTwsLTZHnuGIHX1SbZqa7CXqhtCXQGMFaSL24JBDTdRKo5RSbsYiAnPpGCVgH-TtlrPOERjhm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Vibrant &amp; Fast</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">print</span>
+<h3 class="text-2xl font-bold">Digital &amp; UV Printing</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">High-resolution graphics for signs, posters, and point-of-sale displays with instant drying UV technology.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Large Format Vinyl</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> UV Flatbed Printing</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> High-Res Graphics</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category 2: Industrial Solutions -->
+<div class="service-card group fade-in-up stagger-2 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Industrial control panel layout" class="w-full h-full object-cover transition-transform duration-500" data-alt="Industrial control panel with precise labeling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNDkoKbAw5ZHHkl4rPPWjVGcOegGNFA8mWZllnyhRIpUDuNVl9MCeyM1S391BYhImcDifU_KapVaMrgwSb5qJlr2XvfQNDVeguPLe8zx0TxqZ8HT2Ux879wwvHKHLaMaeKP5sPP-xpkRT3qVwBxCV-XUHx0U5gauDRHdaS8wMB_syUgFxgvNEEmmWbzj3wkkIM84KYSqrQV1OZ6wHwCfYzpYAat0DLcCv-HopQt9szSyp5JITP9E6_kORIwvK-Yrgrugi11yVl0-r-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Durable &amp; Precise</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">settings_input_component</span>
+<h3 class="text-2xl font-bold">Industrial Solutions</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">Specialized panels and overlays designed for harsh industrial environments and technical precision.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Polycarbonate &amp; Polyester</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Industrial Panel Design</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Screen Printing for Panels</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category 3: Packaging & Manuals -->
+<div class="service-card group fade-in-up stagger-3 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Eco-friendly packaging design" class="w-full h-full object-cover transition-transform duration-500" data-alt="Craft paper packaging and product manuals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANDa6szBrnzz1Fuj4jZVuCediFv1jQyCHnP2S-J2qseSZkf2ATw2EdUjPJut1N01APgraR4vr2dct1R9h4L-mAIgVtfp4P5PwBOEJnMMhr9w8aKXVnUZBVBOXtNGrMNxJHw-j0l3Dn38xqyANUKWhDR1osFXxbQXHV_C1dghaRXuoHAaFCk9erkiAte50TiVjSQ6FDFstTfqdfUELCGnysMl4rwdMhSc6imOqKf1sXjEnHPatMwyCPLxlIh3dQrlAY5zJ6RGQGuYZJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Complete Brand Suite</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">package_2</span>
+<h3 class="text-2xl font-bold">Packaging &amp; Manuals</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">End-to-end product presentation solutions from sturdy wooden boxes to detailed user manuals.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Wooden Packing Boxes</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Instruction Manuals</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Custom Product Packaging</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category 4: T-Shirts & Apparel -->
+<div class="service-card group fade-in-up stagger-4 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Custom screen printed t-shirt" class="w-full h-full object-cover transition-transform duration-500" data-alt="Custom branded apparel hanging on rack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDogMBiGW1kcuXjvLqwyGtEsoBnODKouM0VuBUVBP-SjMsA4vFNvVGlk5rdGmCcduncgB3LsmS8V-wLkCUg4_ulFFtgIqWNtM4wQjRGMSMEmYdyq4-g2UhNgiViJMa_LqnmmtJsnlK19cPp6KZFZ3VwMIoygfaRGKJQyhn93ViuqBrwYLaB8IruEZFSFIX_6v4wxy4PPbeR3HlRVW1QOi2jd2ieirOuJnEj0ABGecOpXuGsPA_coS6ugtlXnkpdUi53MBXAse2GcweW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Custom Fashion</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">apparel</span>
+<h3 class="text-2xl font-bold">T-Shirts &amp; Apparel</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">High-quality garment printing for corporate identity, events, and custom fashion brands.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Screen &amp; DTG Printing</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Corporate Polos</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Custom Sports Jerseys</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category 5: Offset & Identity -->
+<div class="service-card group fade-in-up stagger-5 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Corporate identity stationery" class="w-full h-full object-cover transition-transform duration-500" data-alt="Professional ID cards and business cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA93SFhZq4ignPGOlniN9wqYYG6kTDP1EWbRiTkTojB574M6h_lznsHV42MJgT5l4nlQ6yT2AWGOR0wJ6qQJ2jLQYCC9paSOGW5dzsshhod9ZquW8hcOrofYOwEM1t77VF6ztTplmrqEoYK2TFy9-1HEif0MkV5iYchIoq7V8KBuJBU0i7i5OxbLjTMes-ztb1DpMzL-mWkd8VrJ2eN34_lt25mpTs3piWEN-qUZLxDcW0vKzh5Z9mIDsUZavtArXI4vUK0fAY5xy4Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Professional Edge</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">badge</span>
+<h3 class="text-2xl font-bold">Offset &amp; Identity</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">Mass-scale printing and specialized identification tools for corporate environments.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Offset Bulk Printing</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> ID Card &amp; Lanyard Tags</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Flex &amp; Shop Signages</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category 6: Trophies & Gifts -->
+<div class="service-card group fade-in-up stagger-6 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Elegant award trophy" class="w-full h-full object-cover transition-transform duration-500" data-alt="Crystal and wooden awards for corporate gifts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHG2XF6PE166QH4pEubRpEwmCMGEdOfsMPJAcnUDKRyn8LLKhoKv_sU-tbz2JEZwMUv2AT27jpD18Ls6Nf8Nqe0ara-tYB4l5gedDogPsQUA3LkT8oGEjLNHeeEf29eBG0GU8Op13_3VkEPSfVUsf5U_0NnmXm77Cm1fun3Optee8pwZ8ho3bsG5tJRa1goK6cr3_nLABYZAVLvp4Hz7i08MfLPax-lotHMDoy2ztVGRkBSciiZPNtdhf54G-ij6ZgwZoO8SY-EwFl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Premium Recognition</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">trophy</span>
+<h3 class="text-2xl font-bold">Trophies &amp; Gifts</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">Elegant awards and customized gifting items designed to celebrate excellence and partnership.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Bespoke Crystal Trophies</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Premium Gift Boxes</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Laser Engraved Items</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category 7: CNC & Laser Services -->
+<div class="service-card group fade-in-up stagger-7 relative overflow-hidden rounded-xl bg-white shadow-sm border border-[#f0f2f4]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Laser cutting wood" class="w-full h-full object-cover transition-transform duration-500" data-alt="High precision CO2 laser cutting wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6T9JyJh91uNicXOfjTsO_dfBWvjnpSZduoFTXjL26iKkStjx4ck8jkAH0KiqmZkQoDXO-7OVZJapwaPatgGYnCNGCvoBVrR5BOuL3VSz0a6pslEUxWl9dZnpofXdtcmrC9shTWg9uCjj3gGo7q6jGfnz8VhZ5eNG9QpTdNWad2Pq5tjkW5HDzcZVY25ccg94Fh4AvG_m8lAvKGTZ7rRchhwdukqvsUhZ0q_DWNZ1o2WVOVziSyR4AzEOl86jXHtmzURkYmPgJuxFe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Advanced Fab</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+<h3 class="text-2xl font-bold">CNC &amp; Laser Services</h3>
+</div>
+<p class="text-[#616f89] mb-6 text-sm leading-relaxed">Precision fabrication using state-of-the-art CNC routers and high-speed CO2 laser systems.</p>
+<ul class="space-y-2 mb-8 text-sm font-medium text-[#111318]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> CNC Router Cutting</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> CO2 Laser Engraving</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Acrylic &amp; MDF Cutting</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Contact CTA Card -->
+<div class="fade-in-up stagger-7 lg:col-span-2 bg-primary rounded-xl p-10 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-md">
+<h3 class="text-3xl font-black mb-4 leading-tight">Can't find what you're looking for?</h3>
+<p class="text-white/80 font-medium">Our team specializes in custom requests and one-off industrial solutions. Talk to us today.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="bg-white text-primary px-8 py-4 rounded-lg font-black text-lg hover:bg-background-light transition-all">
+                        Talk to an Expert
+                    </button>
+<button class="border-2 border-white text-white px-8 py-4 rounded-lg font-black text-lg hover:bg-white hover:text-primary transition-all">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Identical to Home Page Style) -->
+<footer class="bg-white border-t border-[#f0f2f4] mt-20 px-6 md:px-20 lg:px-40 py-16">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="col-span-1 lg:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="text-primary">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-black tracking-tight">SHREE GRAPHICS</h2>
+</div>
+<p class="text-[#616f89] text-sm leading-relaxed mb-6">
+                    Delivering premium printing and industrial solutions with precision and passion since 2005.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-[#f0f2f4] rounded-lg flex items-center justify-center text-[#111318] hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 bg-[#f0f2f4] rounded-lg flex items-center justify-center text-[#111318] hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Services</h4>
+<ul class="space-y-4 text-sm text-[#616f89]">
+<li><a class="hover:text-primary transition-colors" href="#">Digital Printing</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Industrial Panels</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Laser Cutting</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Custom Gifting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Company</h4>
+<ul class="space-y-4 text-sm text-[#616f89]">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Our Process</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Clients</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Subscribe</h4>
+<p class="text-sm text-[#616f89] mb-4">Get the latest updates on printing tech.</p>
+<div class="flex gap-2">
+<input class="bg-[#f0f2f4] border-none rounded-lg flex-1 text-sm focus:ring-2 focus:ring-primary" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto mt-16 pt-8 border-t border-[#f0f2f4] flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-[#616f89]">
+<p>© 2024 Shree Graphics. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

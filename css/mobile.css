@@ -152,49 +152,91 @@ body {
 /* Hero Section */
 .hero-section {
     margin-top: 60px;
-    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-    padding: 60px 0 100px 0;
+    /* Full screen minus header */
+    min-height: calc(100vh - 60px);
+    padding: 0 0 100px 0;
+    /* detailed padding */
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    /* Push content to bottom */
+    background-color: var(--dark-navy);
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 37, 64, 0.4) 0%, rgba(10, 37, 64, 0.9) 100%);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
 .hero-text {
     text-align: center;
     padding: 0 10px;
+    color: var(--white);
 }
 
 .hero-title {
     font-size: 32px;
     font-weight: 800;
     line-height: 1.3;
-    color: var(--dark-navy);
+    color: var(--white);
     margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .highlight {
     color: var(--primary-orange);
     display: block;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .hero-subtitle {
-    font-size: 16px;
-    color: var(--text-light);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 15px;
     font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
     font-size: 15px;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 30px;
-    line-height: 1.7;
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -240,25 +282,6 @@ body {
     color: var(--white);
 }
 
-.hero-image {
-    padding: 0 20px;
-}
-
-.image-placeholder {
-    width: 100%;
-    height: 280px;
-    background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(10, 37, 64, 0.3);
-}
-
-.image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .wave-divider {
     position: absolute;
     bottom: 0;
@@ -266,6 +289,7 @@ body {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 3;
 }
 
 .wave-divider svg {
@@ -621,4 +645,174 @@ body {
 .footer-bottom p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 12px;
+}
+
+/* Image Labels Mobile */
+.portfolio-image {
+    position: relative;
+}
+
+.image-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+/* Services Page Mobile Styles */
+.sub-menu-container {
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 60px;
+    /* Mobile navbar height */
+    z-index: 900;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sub-menu {
+    display: flex;
+    padding: 15px 20px;
+    gap: 20px;
+    width: max-content;
+}
+
+.sub-menu-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.sub-menu-link.active {
+    color: var(--white);
+    background-color: var(--primary-orange);
+}
+
+.services-main {
+    padding-top: 0;
+}
+
+.services-header {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 20px;
+    background-color: var(--dark-navy);
+}
+
+.services-header .section-title {
+    color: var(--white);
+}
+
+.services-header .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.services-header .title-underline {
+    background: linear-gradient(90deg, var(--primary-orange), transparent);
+}
+
+/* Hide Portfolio Section */
+#portfolio {
+    display: none !important;
+}
+
+.service-category {
+    padding: 40px 0;
+    scroll-margin-top: 140px;
+    /* Offset for sticky header + sub-menu on mobile */
+}
+
+.category-header {
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary-orange);
+    padding-left: 15px;
+}
+
+.category-header h3 {
+    font-size: 22px;
+    color: var(--dark-navy);
+}
+
+/* Call to Action Section Mobile */
+.cta-section {
+    background-color: var(--primary-orange);
+    padding: 50px 20px;
+    color: var(--white);
+    margin: 40px 20px 0;
+    /* Add margin on sides for card look */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(255, 140, 66, 0.2);
+}
+
+.cta-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+
+.cta-text h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.cta-text p {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.btn-cta-primary {
+    background-color: var(--white);
+    color: var(--primary-orange);
+    border: 2px solid var(--white);
+}
+
+.btn-cta-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
 }

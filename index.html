@@ -36,14 +36,24 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Home Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline
+                poster="https://images.unsplash.com/photo-1693031630369-bd429a57f115?q=80&w=600&auto=format&fit=crop"
+                id="heroVideo">
+                <source src="images/welcome.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -59,12 +69,6 @@
                     <div class="hero-buttons">
                         <a href="#portfolio" class="btn btn-primary">View Our Work</a>
                         <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-placeholder">
-                        <img src="https://images.unsplash.com/photo-1693031630369-bd429a57f115?q=80&w=600&auto=format&fit=crop"
-                            alt="Printing Services Showcase" id="heroImage">
                     </div>
                 </div>
             </div>
@@ -225,6 +229,48 @@
                             <p>Unique solutions for specific needs</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Industry Leaders Trust Us Section -->
+    <section class="trust-section">
+        <div class="container center-text">
+            <h2 class="section-title">Why Industry Leaders Trust Us</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Our streamlined approach ensures that every project, from prototyping to mass
+                production, meets the highest industrial standards.</p>
+
+            <div class="trust-grid">
+                <!-- Grid Line (Desktop Only) -->
+                <div class="trust-line hidden-mobile"></div>
+
+                <!-- Item 1 -->
+                <div class="trust-item">
+                    <div class="icon-circle">
+                        <span class="material-symbols-outlined">verified_user</span>
+                    </div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Rigorous QC inspections at every stage of the fabrication process.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="trust-item">
+                    <div class="icon-circle">
+                        <span class="material-symbols-outlined">precision_manufacturing</span>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>State-of-the-art Japanese UV printers and high-precision CNC routers.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="trust-item">
+                    <div class="icon-circle">
+                        <span class="material-symbols-outlined">schedule</span>
+                    </div>
+                    <h3>Timely Delivery</h3>
+                    <p>Optimized logistics and production schedules for rapid turnaround.</p>
                 </div>
             </div>
         </div>
